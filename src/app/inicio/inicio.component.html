@@ -11,7 +11,7 @@
         </div>
         <div class="row d-flex justify-content-center mt-3 mb-5">
             <div class="col-md-6">
-                <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
+                <button class="btn btn-light mr-2" data-bs-toggle="modal" data-bs-target="#novaPostagem">Nova Postagem</button>
                 <a class="btn btn-outline-light" href="#postagens">Ver Postagens</a>
             </div>
 
@@ -24,9 +24,9 @@
 <div class="container mt-5 mb-5" id="postagens">
     <nav>
         <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-          <a class="nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#nav-todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
-          <a class="nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#nav-minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false" (click)="findByIdUser()">Minhas Postagens</a>
-          <a class="nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab" href="#nav-postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por Tema</a>
+          <a class="nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab" data-bs-toggle="tab" href="#nav-todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
+          <a class="nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-bs-toggle="tab" href="#nav-minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false" (click)="findByIdUser()">Minhas Postagens</a>
+          <a class="nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-bs-toggle="tab" href="#nav-postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por Tema</a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
@@ -83,12 +83,12 @@
 </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="novaPostagem" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="TitutloModalCentralizado">Nova Postagem</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -102,7 +102,7 @@
               <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto" rows="3"></textarea>
             </div>
             <div class="form-group">
-                <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>: </label>
+                <label for="tema">Escolha um tema ou <button type="button" routerLink="/tema" data-bs-dismiss="modal">cadastre um novo</button> </label>
                 <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">
                     <option *ngFor="let item of listaTemas" value="{{item.id}}">{{item.descricao}}</option>
                 </select>
@@ -110,8 +110,8 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">Publicar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" (click)="publicar()" data-bs-dismiss="modal">Publicar</button>
         </div>
       </div>
     </div>
