@@ -27,6 +27,10 @@ export class InicioComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
 
+  
+  key = 'data'
+  reverse = true
+
   constructor(
     private router: Router,
     private postagemService: PostagemService,
@@ -79,6 +83,7 @@ export class InicioComponent implements OnInit {
 
     this.user.id = this.idUser
     this.postagem.usuario = this.user
+
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp      
