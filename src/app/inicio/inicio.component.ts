@@ -30,14 +30,14 @@ export class InicioComponent implements OnInit {
   idUser = environment.id
 
   
-  key = 'data'
+  key = 'date'
   reverse = true
 
   constructor(
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private authService: AuthService,
+    public authService: AuthService,
     private alertas: AlertasService 
 
   ) { }
