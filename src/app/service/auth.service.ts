@@ -43,7 +43,7 @@ export class AuthService {
 
   adm(){
     let ok: boolean = false
-    if(environment.tipo == 'adm'){
+    if(environment.tipo == 'administrador'){
       ok = true
     }
     return ok
